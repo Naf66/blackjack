@@ -1,9 +1,7 @@
 let player ={
-    Name : "Nafe",
-    chip: 150,
-    hello: function(){
-        
-    }
+    Name : "",
+    chip: "100",
+    
 }
 let cards = []
 let sum = 0
@@ -18,6 +16,25 @@ let messageEl = document.getElementById("message-el")
 
 let playerEl=document.getElementById("player-el")
 playerEl.textContent= player.Name + ": $" + player.chip
+
+
+
+
+window.onload = function() {
+    
+    let userName = prompt("Please enter your name:");
+    
+   
+    if (userName === null || userName.trim() === "") {
+        player.Name = "Guest";
+    } else {
+        player.Name = userName;
+    }
+
+   
+    let playerEl = document.getElementById("player-el")
+    playerEl.textContent = player.Name + ": $" + player.chip
+}
 
 function genarateRandom() {
     let randomNumber = Math.random() * 13
